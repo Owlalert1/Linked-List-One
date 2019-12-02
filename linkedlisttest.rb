@@ -36,29 +36,21 @@ def reverse_list(list)
   return stack.data
 end
 
-def print_values_recursive(list_node)
+def print_values(list_node)
   if list_node
     print "#{list_node.value} --> "
-    print_values_recursive(list_node.next_node)
+    print_values(list_node.next_node)
   else
     print "nil\n"
     return
   end
 end
 
-  def print_values_iterative(list_node)
-    while list_node
-      print "#{list_node.value} --> "
-      list_node = list_node.next_node
-    end
-      puts "nil"
-  end
-
 node1 = LinkedListNode.new(37)
 node2 = LinkedListNode.new(99, node1)
 node3 = LinkedListNode.new(12, node2)
 
-print_values_iterative(node3)
-puts "-------"
+print_values(node3)
+puts
 revlist = reverse_list(node3)
-print_values_iterative(revlist)
+print_values(revlist)
